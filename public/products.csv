@@ -1,5 +1,0 @@
-id,title,description,availability,condition,price,link,image_link,brand
-modern-chair,Moden Chair,Lorem ipsum,in stock,new,180 USD,https://mykea.herokuapp.com/modern-chair,https://mykea.herokuapp.com/img/product-img/modern-chair.jpg,MyKea
-minimalist-plant-pot,Minimalist Plant Pot,Lorem ipsum,in stock,new,180 USD,https://mykea.herokuapp.com/minimalist-plant-pot,https://mykea.herokuapp.com/img/product-img/minimalist-plant-pot.jpg,MyKea
-metallic-chair,Metallic Chair,Lorem ipsum,In stock,new,318 USD,https://mykea.herokuapp.com/metallic-chair,https://mykea.herokuapp.com/img/product-img/metallic-chair.jpg,MyKea
-table,Table,Lorem ipsum,In stock,new,99 USD,https://mykea.herokuapp.com/table,https://mykea.herokuapp.com/img/product-img/table.jpg,MyKea

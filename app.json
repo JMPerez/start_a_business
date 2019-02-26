@@ -8,6 +8,9 @@
       "description": "Your business name",
       "value": "MyBusiness"
     },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
     "PIXEL_ID": {
       "description": "Your FB Pixel ID for signal tracking",
       "value": ""

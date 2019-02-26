@@ -2,16 +2,19 @@ const express = require('express')
 const app = express()
 const csv = require("fast-csv");
 const fs = require("fs")
-const stream = fs.createReadStream("public/products.csv");
 
 const port = process.env.PORT
 
+const host = `https://${process.env.HEROKU_APP_NAME}`;
+
+const csvContents = fs.readFileSync('products.csv', 'utf8').replace(/\$\{HOST\}/g, host);
 let products = {}
-csv
- .fromStream(stream, {headers : true})
- .on("data", function(data){
-          products[data.id] = data;
-      });
+csv.fromString(csvContents, {headers : true})
+.on("data", function(data){
+         products[data.id] = data;
+         console.log(products);
+
+     });
 
 const general_info = {
     pixel_id : process.env.PIXEL_ID,
@@ -31,6 +34,12 @@ app.get('/', function (req, resp) {
     resp.render('index', data);
 })
 
+app.get('/csv', function (req, resp) {
+    resp.attachment('filename.csv');
+    resp.status(200)
+        .send(csvContents);
+})
+
 app.get('/:id', function (req, resp) {
     if(! (req.params.id in products)){
         resp.redirect('/');
@@ -43,6 +52,17 @@ app.get('/:id', function (req, resp) {
 })
 
 app.post('/:id', function (req, resp) {
+    if(! (req.params.id in products)){
+        resp.redirect('/');
+    }
+    const data = {
+        product : products[req.params.id],
+        general_info : general_info
+    };
+    resp.render('purchased', data);
+})
+
+app.post('/products.csv', function (req, resp) {
     if(! (req.params.id in products)){
         resp.redirect('/');
     }

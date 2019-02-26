@@ -1,0 +1,5 @@
+id,title,description,availability,condition,price,link,image_link,brand
+modern-chair,Moden Chair,Lorem ipsum,in stock,new,180 USD,${HOST}/modern-chair,${HOST}/img/product-img/modern-chair.jpg,MyKea
+minimalist-plant-pot,Minimalist Plant Pot,Lorem ipsum,in stock,new,180 USD,${HOST}/minimalist-plant-pot,${HOST}/img/product-img/minimalist-plant-pot.jpg,MyKea
+metallic-chair,Metallic Chair,Lorem ipsum,In stock,new,318 USD,${HOST}/metallic-chair,${HOST}/img/product-img/metallic-chair.jpg,MyKea
+table,Table,Lorem ipsum,In stock,new,99 USD,${HOST}/table,${HOST}/img/product-img/table.jpg,MyKea
